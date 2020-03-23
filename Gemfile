@@ -43,6 +43,7 @@ gem 'faker'
 gem 'date'
 gem 'whenever', require: false
 gem "chartkick"
+gem "figaro"
 
 
 # Use ActiveStorage variant
