@@ -1,0 +1,15 @@
+current directory: /home/bouazzaoui/week3/Rocket_Elevators_Information_System/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/home/bouazzaoui/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/bouazzaoui/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200303-30074-67qjyz.rb extconf.rb
+creating Makefile
+
+current directory: /home/bouazzaoui/week3/Rocket_Elevators_Information_System/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/bouazzaoui/week3/Rocket_Elevators_Information_System/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/bouazzaoui/week3/Rocket_Elevators_Information_System/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -m 0755 cruby.so ./.gem.20200303-30074-171lsfq/skiptrace/internal

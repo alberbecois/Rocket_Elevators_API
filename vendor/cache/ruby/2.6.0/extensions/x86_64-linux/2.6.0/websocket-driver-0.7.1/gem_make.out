@@ -1,0 +1,15 @@
+current directory: /home/bouazzaoui/week3/Rocket_Elevators_Information_System/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+/home/bouazzaoui/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/bouazzaoui/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200303-30074-165j6vk.rb extconf.rb
+creating Makefile
+
+current directory: /home/bouazzaoui/week3/Rocket_Elevators_Information_System/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/bouazzaoui/week3/Rocket_Elevators_Information_System/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/bouazzaoui/week3/Rocket_Elevators_Information_System/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -m 0755 websocket_mask.so ./.gem.20200303-30074-tx8k9f
