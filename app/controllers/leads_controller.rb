@@ -6,6 +6,22 @@ class LeadsController < ApplicationController
     @lead = Lead.new #generate data blank to create new form
   end
 
+  def new_lead
+    p = params["lead"].permit!
+    puts "PARAMS = #{p}"
+    file_attachment = p["file_attachment"]
+    if file_attachment != nil
+      p["file_attachment"] = file_attachment.read
+      p["original_file_name"] = file_attachment.original_filename
+    end
+ 
+ 
+    lead = Lead.new(p)
+    lead.valid?
+    p lead.errors
+    lead.save!
+  end
+  
   def create
     @lead = Lead.new(lead_params)
     #render json: @lead #test when submit button form

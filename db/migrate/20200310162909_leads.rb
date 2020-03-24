@@ -9,7 +9,8 @@ class Leads < ActiveRecord::Migration[5.2]
        t.string :project_desc
        t.string :department, :null => false
        t.string :message, :null => false
-       t.blob :attached_file
+       t.binary :attached_file
+       
        t.timestamps
     end
  end
