@@ -142,6 +142,8 @@ GEM
     formtastic_i18n (0.6.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.0.0)
+      activesupport (>= 5)
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
@@ -351,6 +353,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   font-awesome-sass (~> 5.12.0)
+  groupdate
   http
   jbuilder (~> 2.5)
   jquery-rails
