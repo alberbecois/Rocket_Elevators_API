@@ -1,5 +1,6 @@
 require 'http'
 require 'json'
+require 'send_sms/sms'
 
 ActiveAdmin.register Elevator do
     belongs_to :column, optional: true
