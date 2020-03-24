@@ -45,6 +45,11 @@ gem 'whenever', require: false
 gem "chartkick"
 gem "figaro"
 
+# slack api
+# gem 'slack-ruby-client'
+# gem 'async-websocket', '~> 0.8.0'
+gem 'http'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
