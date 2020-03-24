@@ -43,8 +43,18 @@ gem 'faker'
 gem 'date'
 gem 'whenever', require: false
 gem "chartkick"
+gem 'groupdate'
 gem "figaro"
+<<<<<<< HEAD
 gem 'dropbox_api'
+=======
+
+# slack api
+# gem 'slack-ruby-client'
+# gem 'async-websocket', '~> 0.8.0'
+gem 'http'
+
+>>>>>>> 60773a4f7deec1f2bd3d08773fd88b5c511a00d2
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
