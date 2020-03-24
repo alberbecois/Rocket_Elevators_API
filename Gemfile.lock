@@ -121,14 +121,11 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-<<<<<<< HEAD
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     dropbox_api (0.1.18)
       faraday (<= 1.0)
       oauth2 (~> 1.1)
-=======
-    domain_name (0.5.20190701)
-      unf (>= 0.0.5, < 1.0.0)
->>>>>>> 60773a4f7deec1f2bd3d08773fd88b5c511a00d2
     erubi (1.9.0)
     execjs (2.7.0)
     faker (2.10.2)
