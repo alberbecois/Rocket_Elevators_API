@@ -52,6 +52,9 @@ gem "figaro"
 gem 'http'
 
 
+# zendesk api
+gem "zendesk_api"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
