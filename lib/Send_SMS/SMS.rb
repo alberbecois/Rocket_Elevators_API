@@ -1,4 +1,7 @@
 require 'twilio-ruby'
+require 'json'
+require 'http'
+
 module SendSms
     class Sms 
         def initialize
