@@ -6,4 +6,5 @@ class Elevator < ApplicationRecord
         sms = SendSms::Sms.new
         sms.send_sms
     end
-end
+end 
+
