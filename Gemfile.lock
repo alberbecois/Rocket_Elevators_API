@@ -121,11 +121,16 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     erubi (1.9.0)
     execjs (2.7.0)
     faker (2.10.2)
       i18n (>= 1.6, < 2)
     ffi (1.12.2)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     figaro (1.1.1)
       thor (~> 0.14)
     font-awesome-rails (4.7.0.5)
@@ -142,6 +147,16 @@ GEM
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
+    http (4.3.0)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      http-parser (~> 1.2.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    http-parser (1.2.1)
+      ffi-compiler (>= 1.0, < 2.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.11.0)
@@ -297,6 +312,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.6)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -336,6 +354,7 @@ DEPENDENCIES
   font-awesome-rails
   font-awesome-sass (~> 5.12.0)
   groupdate
+  http
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
