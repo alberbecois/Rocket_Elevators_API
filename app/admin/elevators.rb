@@ -1,6 +1,7 @@
 require 'http'
 require 'json'
 
+
 ActiveAdmin.register Elevator do
     belongs_to :column, optional: true
     permit_params :serial_number, :model, :elevator_type, :status, :date_commision, :date_last_inspect, :certificate_inspect, :info, :notes, :column_id
