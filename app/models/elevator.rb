@@ -1,4 +1,3 @@
-require 'send_sms/sms'
 class Elevator < ApplicationRecord
     belongs_to :column
     after_save :send_sms
