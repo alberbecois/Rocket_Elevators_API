@@ -3,6 +3,9 @@ ActiveAdmin.register_page "Dashboard" do
 
   content title: proc { I18n.t("active_admin.dashboard") } do
 
+    panel "google map" do
+      render 'map'
+    end
     panel "contact requests" do
       column_chart Lead.group_by_month(:created_at).count
     end
