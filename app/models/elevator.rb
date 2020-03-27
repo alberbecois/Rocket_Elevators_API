@@ -6,9 +6,10 @@ class Elevator < ApplicationRecord
     after_save :send_sms
 
     def send_sms
-        sms = SendSms::Sms.new
-        sms.send_sms
+        if (self.saved_change_to_status? && self.status == "intervention")
+            sms = SendSms::Sms.new
+            sms.send_sms(self.id, self.column.battery.building.id, self.status)
+        end
     end         
-
 end 
 
