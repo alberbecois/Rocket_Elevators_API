@@ -1,7 +1,7 @@
 class Lead < ApplicationRecord
-    
+    has_one_attached :attached_file
     after_save :create_lead_ticket
-
+    has_one :customer
     def create_lead_ticket
         client = ZendeskAPI::Client.new do |config|
             config.url = ENV['ZENDESK_URL']
@@ -29,4 +29,5 @@ class Lead < ApplicationRecord
             :type => "question"
             )
     end
+
 end

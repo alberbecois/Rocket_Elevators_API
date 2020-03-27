@@ -10,7 +10,9 @@ ActiveAdmin.register Lead do
         column  :project_desc
         column  :department
         column  :message
-        column  :attached_file
+        column  :attached_file do |ad|
+            image_tag rails_blob_path(ad.attached_file, disposition: 'attachement') if ad.attached_file.attached?
+            end
         column  :timestamp
         actions
     end
