@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_233253) do
+ActiveRecord::Schema.define(version: 2020_03_27_185758) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_03_23_233253) do
     t.string "postal_code", null: false
     t.string "country", null: false
     t.text "notes"
+    t.decimal "lat", precision: 15, scale: 10
+    t.decimal "long", precision: 15, scale: 10
   end
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
