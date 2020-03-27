@@ -106,3 +106,5 @@ gem 'figaro'
 gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'twilio-ruby'
 gem 'phonelib'
+gem 'dropbox_api'
+
