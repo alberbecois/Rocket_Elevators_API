@@ -100,8 +100,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+#sendGrid
+gem 'sendgrid-ruby'
+gem 'figaro'
+gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'twilio-ruby'
 gem 'phonelib'
-
 gem 'dropbox_api'
+
