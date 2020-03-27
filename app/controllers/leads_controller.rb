@@ -1,11 +1,17 @@
 class LeadsController < ApplicationController
+
   def index
   end
 
   def new
-    @lead = Lead.new #generate data blank to create new form
+    @lead = Lead.new 
   end
 
+#SENDGRID
+  require 'sendgrid-ruby'
+  include SendGrid
+  
+  
   def create
     @lead = Lead.new(lead_params)
     puts "CREATING"
@@ -25,15 +31,39 @@ class LeadsController < ApplicationController
     if @lead.save
       flash[:notice] = "We received your request! "
       redirect_to :index
+
+      data = JSON.parse(%Q[{
+        "personalizations": [
+          {
+            "to": [
+              {
+                "email": "#{@lead.email}"
+              }
+            ],
+            "dynamic_template_data":{
+              "full_name":"#{@lead.full_name}",
+              "project_name":"#{@lead.project_name}"
+            },
+            "subject": "Greetings from Team Rocket!"
+          }
+        ],
+        "from": {
+          "email": "Rocket@example.com"
+        },
+        "template_id":"d-4bffcf74a77e45ec9f8dd8006578c217"
+      }])
+      sg = SendGrid::API.new(api_key: ENV["SENDGRID_API"])
+      response = sg.client.mail._("send").post(request_body: data)
     else
       flash[:notice] = "Request not succesfull."
       redirect_to action:"new"
     end
   end
 
+  
+
   def edit
   end
-  #for get params when click submit form
   
   private
   def lead_params

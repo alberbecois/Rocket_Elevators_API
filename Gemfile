@@ -52,6 +52,9 @@ gem "figaro"
 gem 'http'
 
 
+# zendesk api
+gem "zendesk_api", git: 'https://github.com/zendesk/zendesk_api_client_rb'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -97,7 +100,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+#sendGrid
+gem 'sendgrid-ruby'
+gem 'figaro'
+gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'twilio-ruby'
 gem 'phonelib'
 gem 'ibm_watson'
+gem 'dropbox_api'
