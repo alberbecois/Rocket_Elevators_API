@@ -222,6 +222,8 @@ end
     cityF = Faker::Address.city
     postalF = Faker::Address.zip
     notesF = Faker::Lorem.sentence(word_count: 4, supplemental: true, random_words_to_add: 5)
+    latF = rand(35.0..55.0)
+    longF = rand(-120.0..-77.0)
 
     fake_address = Address.create!(
         type_of_address: typeF,
@@ -232,7 +234,9 @@ end
         city: cityF,
         postal_code: postalF,
         country: "US",
-        notes: notesF
+        notes: notesF,
+        lat: latF,
+        long: longF
     )
 
     nameF = Faker::Name.name
@@ -274,6 +278,8 @@ end
             cityF = Faker::Address.city
             postalF = Faker::Address.zip
             notesF = Faker::Lorem.sentence(word_count: 4, supplemental: true, random_words_to_add: 5)
+            latF = rand(35.0..55.0)
+            longF = rand(-120.0..-77.0)
             
             fake_address = Address.create!(
                 type_of_address: typeF,
@@ -284,7 +290,9 @@ end
                 city: cityF,
                 postal_code: postalF,
                 country: "US",
-                notes: notesF
+                notes: notesF,
+                lat: latF,
+                long: longF
             )
         end
 
