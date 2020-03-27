@@ -1,4 +1,4 @@
-require 'send_sms/sms'
+require 'Send_SMS/SMS'
 
 class Elevator < ApplicationRecord
     belongs_to :column
