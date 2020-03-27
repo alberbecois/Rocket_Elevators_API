@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_153954) do
+ActiveRecord::Schema.define(version: 2020_03_23_233253) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_153954) do
     t.string "project_desc"
     t.string "department", null: false
     t.string "message", null: false
-    t.binary "attached_file"
+    t.binary "attached_file", limit: 16777215
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

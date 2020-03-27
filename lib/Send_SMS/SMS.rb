@@ -13,13 +13,13 @@ module SendSms
             client = Twilio::REST::Client.new(account_sid, auth_token)
             
             from = ENV['TWILIO_PHONE_NUMBER']
-            to = '+15146233908'
+            to = '+15146774162'
             
             client.messages.create(
                 from: from,
                 to: to,
-                body: "Hello technician. 
-                There is an elevator in need of your service"
+                body: "Hello technician, Antoine Deblonde. 
+                There is an elevator in need of your service."
             )
         end
     end
