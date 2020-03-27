@@ -1,28 +1,34 @@
 class Customer < ApplicationRecord
     belongs_to :address
-    # belongs_to :users
+    belongs_to :user, optional: true
     has_many :buildings
     after_create :upload_lead_files
+
     def upload_lead_files
+        dropbox_client = DropboxApi::Client.new('Dropbox_token')
+        lead = Lead.find_by_email(self.contact_email)
+       
+        puts lead.email
+        puts 'upload_lead_files is working'
 
-        client_link = dropbox_client.get_temporary_link("/#{self.contact_full_name}/#{lead.attached_file}")
-        puts client_link.link
-        # After save on a customer, verify if there is a lead (for dropbox)
-        def verify_lead
-            puts "in verify lead"
-            # verify if there is 1 lead
-            if self.lead
-            puts "OK__THERE IS 1 LEAD__"
+        if lead.email == self.contact_email
+            puts 'Found email of the same name!!!'
+            #creates client folder in dropbox
+                #new_client_folder = self.name_company_contact
+            dropbox_client.create_folder("/#{self.name_company_contact}")
 
-                # if the lead has no attachment, print to console
-                if self.lead.fileattachment == nil
-                puts "__There's no attachment in the lead__"
-                else 
-                self.lead.add_file_to_dropbox
-                end
-            else
-            puts "OK__THERE IS NO LEAD__"
-            end
+            puts "Folder created for #{self.name_company_contact}!!!"
+
+            #find lead attached_file and put it in drop box
+            dropbox_client.upload("/#{self.name_company_contact}/#{lead.attached_file}", lead.attached_file)
+
+            #check if the upload to dropbox is successful...
+            puts "successfully uploaded!"
+
+            #destroy lead attachment file
+            
+        else 
+            puts "Customer is not found in the Leads Table"
         end
     end
 end
