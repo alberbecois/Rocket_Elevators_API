@@ -38,21 +38,19 @@
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
     for (i = 0; i < locations.length; i++) {  
-        content = '<b>' + locations[i].number_n_street + '</b>' 
-            + '<br>' + names[i].company_name
-            + '<br> <br>' + 'floors: ' + floors[i]
-            + '<br>' + 'batteries: ' + nb_batteries[i]
-            + '<br>' + 'columns: ' + nb_columns[i]
-            + '<br>' + 'elevators: ' + nb_elevators[i]
-            + '<br>' + 'technical contact: ' + tech_names[i].tech_full_name
-
         marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i].lat, locations[i].long),
         map: map
         });
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-            infowindow.setContent(content);
+            infowindow.setContent('<b>' + locations[i].number_n_street + '</b>' 
+            + '<br>' + names[i].company_name
+            + '<br> <br>' + 'floors: ' + floors[i]
+            + '<br>' + 'batteries: ' + nb_batteries[i]
+            + '<br>' + 'columns: ' + nb_columns[i]
+            + '<br>' + 'elevators: ' + nb_elevators[i]
+            + '<br>' + 'technical contact: ' + tech_names[i].tech_full_name);
             infowindow.open(map, marker);
         }
         })(marker, i));
