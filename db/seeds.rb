@@ -320,8 +320,8 @@ end
         fake_battery = Battery.create!(
             building_id: fake_building.id,
             battery_type: buildingtypeF,
-            status: "active",
-            employee_id: jack.id,
+            status: ["active","inactive","intervention"].sample,
+            employee_id: rand(1..9),
             date_commision: c,
             date_last_inspect: c,
             certificate_operations: certificateF,
@@ -336,18 +336,19 @@ end
                 battery_id: fake_battery.id,
                 column_type: buildingtypeF,
                 number_floors: floorsF,
-                status: statusF,
+                status: ["active","inactive","intervention"].sample,
                 info: notesF,
                 notes: notesF
             )
+            modelF = ["Standard","Premium","Excellium"].sample
             rand(1..6).times do |n|
                 certificateF = Faker::IDNumber.valid
                 Elevator.create!(
                     column_id:  fake_column.id,
                     serial_number: Faker::IDNumber.south_african_id_number,
-                    model: ["Standard","Premium","Excellium"].sample,
+                    model: modelF,
                     elevator_type: buildingtypeF,
-                    status: "active",
+                    status: ["active","inactive","intervention"].sample,
                     date_commision: c,
                     date_last_inspect: c,
                     certificate_inspect: certificateF,
