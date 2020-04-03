@@ -102,7 +102,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #sendGrid
 gem 'sendgrid-ruby'
-gem 'figaro'
 gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'twilio-ruby'
 gem 'phonelib'
