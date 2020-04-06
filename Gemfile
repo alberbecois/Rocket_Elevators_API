@@ -45,6 +45,7 @@ gem 'whenever', require: false
 gem "chartkick"
 gem 'groupdate'
 gem "figaro"
+gem "dotenv"
 
 # slack api
 # gem 'slack-ruby-client'
