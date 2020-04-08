@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_27_185758) do
+ActiveRecord::Schema.define(version: 2020_04_01_201410) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_185758) do
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.timestamp "customer_create_date", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.timestamp "customer_create_date", null: false
     t.string "company_name", null: false
     t.string "name_company_contact", null: false
     t.string "company_phone"
@@ -142,9 +142,11 @@ ActiveRecord::Schema.define(version: 2020_03_27_185758) do
     t.string "project_desc"
     t.string "department", null: false
     t.string "message", null: false
-    t.binary "attached_file", limit: 16777215
+    t.binary "attached_file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "customer_id"
+    t.index ["customer_id"], name: "index_leads_on_customer_id"
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -194,6 +196,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_185758) do
   add_foreign_key "columns", "batteries"
   add_foreign_key "customers", "addresses"
   add_foreign_key "elevators", "columns"
+  add_foreign_key "leads", "customers"
   add_foreign_key "users", "customers"
   add_foreign_key "users", "employees"
 end
